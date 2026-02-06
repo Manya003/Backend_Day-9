@@ -8,7 +8,7 @@ function App() {
   console.log("Hello Integration")
 
   function fetchNotes() {
-    axios.get('http://localhost:3000/api/notes')
+    axios.get('https://backendcohort2.onrender.com/api/notes')
     .then((res) => {
       setNotes(res.data.notes)
     })  
@@ -31,7 +31,7 @@ function App() {
       const {title, description} = e.target.elements;
       console.log(title.value, description.value);
 
-      axios.post("http://localhost:3000/api/notes", { 
+      axios.post("https://backendcohort2.onrender.com/api/notes", { 
             title: title.value,   // Giving data in object form to the body as body need data in json format.
             description: description.value
       })
@@ -46,7 +46,7 @@ function App() {
   function handleDeleteNode(noteId) {
     // console.log(noteId) // console noteId on the note we click we get its id
 
-    axios.delete("http://localhost:3000/api/notes/"+noteId) 
+    axios.delete("https://backendcohort2.onrender.com/api/notes/"+noteId) 
     .then((res) => {
     console.log(res.data)
 
